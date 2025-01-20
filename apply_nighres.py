@@ -1,6 +1,6 @@
 import nighres
 from shutil import copyfile
-from './prep_for_nighres.py' import prep_for_nighres
+from prep_for_nighres import prep_for_nighres
 
 def apply_nighres(innerbin, outerbin, output_dir):
 

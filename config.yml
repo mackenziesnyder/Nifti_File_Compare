@@ -1,0 +1,12 @@
+laplace_labels:
+ AP:
+   src:
+     - 5
+ PD:
+   src:
+     - 3
+ IO:
+   src:
+     - 2
+     - 4
+     - 7

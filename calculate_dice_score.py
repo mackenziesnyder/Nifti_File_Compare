@@ -35,8 +35,8 @@ def calculate_dice_score(laynii_file_path, master_file_path):
 if __name__ == "__main__":
     
     # File paths to LayNii file and master file (edit to correct location)
-    laynii_file_path = "laynii_output_files/sub-01_dir-IO_hemi-L_space-corobl_label-hipp_desc-equivol_coords.nii.gz"
-    master_file_path = "master_output_files/sub-01_dir-IO_hemi-L_space-corobl_label-hipp_desc-equivol_coords.nii.gz"
+    laynii_file_path = "laynii_test_data/sub-01_dir-IO_hemi-L_space-corobl_label-hipp_desc-equivol_coords.nii.gz"
+    master_file_path = "master_test_data/sub-01_dir-IO_hemi-L_space-corobl_label-hipp_desc-equivol_coords.nii.gz"
 
     try:
         # Calculate Dice prediction
