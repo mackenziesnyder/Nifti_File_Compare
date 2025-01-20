@@ -1,0 +1,5 @@
+importlib_resources==6.5.2
+nibabel==5.3.2
+numpy==2.2.2
+packaging==24.2
+typing_extensions==4.12.2
