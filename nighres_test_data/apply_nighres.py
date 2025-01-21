@@ -1,6 +1,6 @@
 import nighres
 from shutil import copyfile
-from prep_for_nighres import prep_for_nighres
+from nighres_test_data.prep_for_nighres import prep_for_nighres
 
 def apply_nighres(innerbin, outerbin, output_dir):
 
@@ -23,7 +23,7 @@ def apply_nighres(innerbin, outerbin, output_dir):
    copyfile(isovolume["depth"], output_dir)
 
 if __name__ == '__main__':
-   input_nii = './laynii_test_data/sc_rim.nii.gz'
-   output_dir = './output'
+   input_nii = '../laynii_test_data/sc_rim.nii.gz'
+   output_dir = '../output'
    innerbin, outerbin = prep_for_nighres(input_nii)
    apply_nighres(innerbin, outerbin, output_dir)

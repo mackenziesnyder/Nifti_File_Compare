@@ -31,7 +31,6 @@ def calculate_dice_score(laynii_file_path, master_file_path):
 
     return dice_pred
 
-
 if __name__ == "__main__":
     
     # File paths to LayNii file and master file (edit to correct location)

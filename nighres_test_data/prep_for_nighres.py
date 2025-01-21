@@ -1,11 +1,14 @@
 import numpy as np
 import nibabel as nib
+import yaml
 
-config = "./config.yml"
+# Load the YAML configuration file
+with open("./config.yml", "r") as config_file:
+    config = yaml.safe_load(config_file)
 
 def prep_for_nighres(input_file):
     
-    ## first load labelmap and binarize one edge that includes the inner surf and one edge the outer
+    # Load labelmap and binarize one edge that includes the inner surf and one edge the outer
     lbl_nib = nib.load(input_file)
     lbl = lbl_nib.get_fdata()
 
@@ -13,13 +16,14 @@ def prep_for_nighres(input_file):
     for i in config["laplace_labels"]["src"]:
         source[lbl == i] = 1
     bin_nib = nib.Nifti1Image(source, lbl_nib.affine, lbl_nib.header)
-    innerbin = nib.save(bin_nib, './output')
+    nib.save(bin_nib, './output_inner.nii')
 
     sink = np.zeros(lbl.shape)
     sink[lbl > 0] = 1
     bin_nib = nib.Nifti1Image(sink, lbl_nib.affine, lbl_nib.header)
-    outerbin = nib.save(bin_nib, './output')
+    nib.save(bin_nib, './output_outer.nii')
 
-    return innerbin, outerbin
+    return './output_inner.nii', './output_outer.nii'
+
 
 
